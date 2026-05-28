@@ -12,7 +12,7 @@ export const botConfig = {
   // - "invisible" = appears offline
   presence: {
     // Current online state shown on Discord.
-    status: "online",
+    status: "dnd",
 
     // Activity lines shown under the bot name.
     // `type` number mapping from Discord:
@@ -25,31 +25,33 @@ export const botConfig = {
     activities: [
       {
         // Text users will see (example: "Playing /help | Titan Bot").
-        name: "Watching /disowned",
+        name: "Listening /disowned",
         // Activity type number (0 = Playing).
         type: 3, 
       },
     ],
   },
 
-  // =========================
-  // COMMAND BEHAVIOR
-  // =========================
-  commands: {
-    // Bot owner user IDs (comma-separated in OWNER_IDS env var).
-    // Owners can access owner/admin-level bot commands.
-    owners: process.env.OWNER_IDS?.split(",") || [],
+ // =========================
+// COMMAND BEHAVIOR
+// =========================
+commands: {
+  // Bot prefix for message commands
+  prefix: ">",
 
-    // Default wait time between command uses (in seconds).
-    defaultCooldown: 3, 
+  // Bot owner user IDs (comma-separated in OWNER_IDS env var).
+  // Owners can access owner/admin-level bot commands.
+  owners: process.env.OWNER_IDS?.split(",") || [],
 
-    // If true, old commands are removed before re-registering.
-    deleteCommands: false,
+  // Default wait time between command uses (in seconds).
+  defaultCooldown: 3, 
 
-    // Optional server ID used for testing slash commands quickly.
-    testGuildId: process.env.TEST_GUILD_ID,
-  },
+  // If true, old commands are removed before re-registering.
+  deleteCommands: false,
 
+  // Optional server ID used for testing slash commands quickly.
+  testGuildId: process.env.TEST_GUILD_ID,
+},
   // =========================
   // APPLICATIONS SYSTEM
   // =========================
