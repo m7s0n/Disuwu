@@ -25,7 +25,7 @@ export const botConfig = {
     activities: [
       {
         // Text users will see (example: "Playing /help | Titan Bot").
-        name: "youtube.com/@TouchDisc",
+        name: "Watching /disowned",
         // Activity type number (0 = Playing).
         type: 3, 
       },
