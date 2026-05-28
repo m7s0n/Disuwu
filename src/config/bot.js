@@ -1,5 +1,27 @@
 import { logger } from '../utils/logger.js';
 
+```js
+client.on("messageCreate", async (message) => {
+  // Ignore bots
+  if (message.author.bot) return;
+
+  // Prefix from config
+  const prefix = botConfig.commands.prefix;
+
+  // Check prefix
+  if (!message.content.startsWith(prefix)) return;
+
+  // Split command + args
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const commandName = args.shift().toLowerCase();
+
+  // Example ping command
+  if (commandName === "ping") {
+    message.reply("Pong!");
+  }
+});
+```
+
 
 export const botConfig = {
   // =========================
